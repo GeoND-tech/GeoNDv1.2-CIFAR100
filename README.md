@@ -83,11 +83,12 @@ python train.py ./data --dataset torch/cifar100 --dataset-download --num-classes
 
 
 
+## Exploration of the momentum parameter
 
+Below is a table with the accuracies of various ```resnet18-paraboloidout``` models for different combinations of momentum values and the use of nesterov momentum. The model seems to start having issues when then momentum is too high and/or further accelerated by nesterov momentum. The best accuracy that is achieved by the pretrained model was given using a momentum of 0.7 and no nesterov.
 
 |   Model           | Momentum | Accuracy |
 | ----------------- |-------- | -------- |
-| ```resnet18``` - baseline   | 0.9, nesterov = True | 78.89% |
 | ```resnet18-paraboloidout```   |   0.1, nesterov = False   | 78.96% |
 | ```resnet18-paraboloidout```   |   0.2, nesterov = False   | 78.82% |
 | ```resnet18-paraboloidout```   |   0.4, nesterov = False   | 79.12% |
@@ -99,3 +100,8 @@ python train.py ./data --dataset torch/cifar100 --dataset-download --num-classes
 | ```resnet18-paraboloidout```   |   0.7, nesterov = True   | 79.44% |
 | ```resnet18-paraboloidout```   |   0.8, nesterov = False   | 78.87% |
 | ```resnet18-paraboloidout```   |   0.9, nesterov = False   | 77.46% |
+
+## References
+- Original repository: [https://github.com/huggingface/pytorch-image-models](https://github.com/huggingface/pytorch-image-models)
+- GeoND Library documentation: [https://geond.tech/geond-docs/](https://geond.tech/geond-docs/)
+- Paraboloid Neurons: [https://geond.tech/wp-content/uploads/2024/06/NPDBINNCP.pdf](https://geond.tech/wp-content/uploads/2024/06/NPDBINNCP.pdf)
