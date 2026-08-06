@@ -12,7 +12,10 @@
 | ```resnet18-paraboloidout```   |   0.2, nesterov = False   | 78.82% |
 | ```resnet18-paraboloidout```   |   0.4, nesterov = False   | 79.12% |
 | ```resnet18-paraboloidout```   |   0.5, nesterov = False   | 79.14% |
+| ```resnet18-paraboloidout```   |   0.5, nesterov = True   | 79.32% |
 | ```resnet18-paraboloidout```   |   0.6, nesterov = False   | 79.37% |
+| ```resnet18-paraboloidout```   |   0.6, nesterov = True   | 79.32% |
 | ```resnet18-paraboloidout```   |   0.7, nesterov = False   | **79.56%** |
+| ```resnet18-paraboloidout```   |   0.7, nesterov = True   | 79.44% |
 | ```resnet18-paraboloidout```   |   0.8, nesterov = False   | 78.87% |
 | ```resnet18-paraboloidout```   |   0.9, nesterov = False   | 77.46% |
