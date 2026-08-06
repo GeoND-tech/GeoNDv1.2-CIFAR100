@@ -1,0 +1,3 @@
+geond.tech/models/v1.2/CIFAR100/resnet18.pth.tar
+geond.tech/models/v1.2/CIFAR100/resnet18-paraboloidout.pth.tar
+
