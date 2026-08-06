@@ -46,7 +46,7 @@ python train.py ./data --dataset torch/cifar100 --dataset-download --num-classes
 
 
 - ### resnet18-paraboloidout
-A ResNet18 model (modified for CIFAR100 as above) with a layer of paraboloid neurons as the output layer. After the Version 1.1 update which fixed some issues, it is possible to use paraboloid layers as output layers. Note that models with a paraboloid output layer (or a paraboloid layer before a linear output layer) seem to perform better without momentum. The training script will handle this through a command line argument. This model achieves the best accuracy.
+A ResNet18 model (modified for CIFAR100 as above) with a layer of paraboloid neurons as the output layer. After the Version 1.2 update which fixed some issues with momentum, using momentum along with ```input_factor = 1.0``` gives the best result. The training script will handle this through a command line argument.
 
 In terms of code, first we import the Library:
 ```
@@ -58,7 +58,7 @@ except ImportError:
 
 Then we replace the existing output layer:
 ```
-model.fc = gpt.ParaboloidOutput(model.fc.in_features, model.fc.out_features, h_factor = 0.01, lr_factor = 1., wd_factor = 1., grad_factor = 1., input_factor = 0.5, output_factor = 0.1, p_factor=0.0001, init = 'spotlight')
+model.fc = gpt.ParaboloidOutput(model.fc.in_features, model.fc.out_features, h_factor = 0.01, wd_factor = 1., grad_factor = 1., input_factor = 1.0, output_factor = 0.1, p_factor=0.0001, init = 'spotlight')
 ```
 Note that ```ParaboloidOutput``` is the same as ```Paraboloid```, it just uses a base configuration more appropriate for output layers.
 
@@ -83,13 +83,6 @@ python train.py ./data --dataset torch/cifar100 --dataset-download --num-classes
 
 
 
-
-
-
-
-```
-python train.py ./data --dataset torch/cifar100 --dataset-download --num-classes 100 --img-size 32 --paraboloidout True --eval True --resume resnet18-paraboloidout.pth.tar
-```
 
 
 |   Model           | Momentum | Accuracy |
