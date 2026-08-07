@@ -95,7 +95,7 @@ python train.py ./data --dataset torch/cifar100 --dataset-download --num-classes
 
 ## Exploration of the momentum parameter
 
-Below is a table with the accuracies of various ```resnet18-paraboloidout``` models for different combinations of momentum values and the use of nesterov momentum. The model seems to start having issues when then momentum is too high and/or further accelerated by nesterov momentum. The best accuracy that is achieved by the pretrained model was given using a momentum of 0.7 and no nesterov.
+Below is a table with the accuracies of various ```resnet18-paraboloidout``` models for different combinations of momentum values and the use of nesterov momentum. The model seems to start having issues when the momentum is too high and/or further accelerated by nesterov momentum. The best accuracy that is achieved by the pretrained model was given using a momentum of 0.7 and no nesterov.
 
 |   Model           | Momentum | Accuracy |
 | ----------------- |-------- | -------- |
